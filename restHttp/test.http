@@ -1,0 +1,25 @@
+@baseUrl = http://localhost:8070/
+
+@lmsUrl = https://b989-2001-ee0-d786-1510-6cad-ad9a-1241-4a89.ngrok-free.app/
+
+###
+
+POST {{baseUrl}}/get-data/copy
+Cookie: session_id=f5cbdf252c21e722d7df2d148478d1ce20c1c434
+Cookie: cids=1
+
+{
+    "jsonrpc":2.0,
+    "method":"call",
+    "params": {"model":"portal.student","fields":[{"name":"name"},{"email":"email"}]}
+}
+
+###
+
+POST {{lmsUrl}}/api/user/v2/account/registration
+Content-Type: application/json
+
+{
+    "username": "test",
+    "password": "test",
+    "email": "

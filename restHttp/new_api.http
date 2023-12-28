@@ -1,0 +1,37 @@
+@baseUrl = http://localhost:8069/
+
+### Register Student
+
+POST {{baseUrl}}/api/student/register
+Content-Type: application/json
+
+{
+    "name":"khoa song nguyen111",
+    "username":"kietafck12031111",
+    "email":"kietafck11203111@gmail.com",
+    "student_code":"332342311"
+}
+
+### GET Student
+
+GET {{baseUrl}}/api/v1/organization/052156/all
+
+
+### GET Student in group
+GET {{baseUrl}}/api/v1/organization/052156/534213
+
+### GET Student in group
+GET {{baseUrl}}/api/v1/organization/052156/student_list
+
+
+
+### GET COURSE INFO
+
+GET {{baseUrl}}/api/v1/course/code-01/info
+
+### GET COURSE INFO
+
+GET {{baseUrl}}/api/hello
+
+###
+GET {{baseUrl}}/api/v2/database

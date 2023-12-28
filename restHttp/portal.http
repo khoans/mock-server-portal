@@ -1,0 +1,64 @@
+@baseUrl = http://localhost:8069/
+@stagingUrl = https://staging-portal.funix.edu.vn/
+
+### Register Student
+
+POST {{baseUrl}}/api/student/register
+Content-Type: application/json
+
+{
+    "name":"khoa song nguyen11",
+    "username":"kietafck1203111",
+    "email":"kietafck1203111@gmail.com",
+    "student_code":"332342311"
+}
+### Register Student Staging
+
+POST {{stagingUrl}}/api/student/register
+Content-Type: application/json
+
+{
+    "name":"khoa song nguyen",
+    "username":"rest-client",
+    "email":"rest_client@gmail.com",
+    "student_code":"3323423"
+}
+
+
+### register student to organization
+
+POST {{baseUrl}}/api/student_organization/add_student
+Content-Type: application/json
+
+{
+    "student": ["business_student_7@gmail.com","business_student_8@gmail.com"],
+    "organization": "Organization 1"
+}
+### register student to organization in staging
+
+POST {{stagingUrl}}/api/student_organization/add_student
+Content-Type: application/json
+
+{
+    "student": ["anph1@funix.edu.vn"],
+    "organization": "Staging"
+}
+
+### Check course enrollment
+GET {{baseUrl}}/api/course_management/check_enroll?student_id=103&course_id=27
+
+
+
+### Feedback Ticket
+
+POST {{baseUrl}}/api/feedback-ticket-management/create
+Content-Type: application/json
+
+{
+    "ticket_category":"outdated",
+    "student_email":"nskhoa@gmail.com",
+    "course_id":"NJ301x",
+    "lesson_url":"http://localhost:2000/course/course-v1:test123+test123+2023_01/home",
+    "ticket_description":"This lesson is outdated"
+
+}
