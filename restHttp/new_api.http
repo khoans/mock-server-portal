@@ -1,4 +1,46 @@
 @baseUrl = http://localhost:8069/
+@stagingUrl = https://staging-portal.funix.edu.vn/
+@devUrl = https://dev-portal.funix.edu.vn/
+
+@lmsdev = https://test-xseries.funix.edu.vn/
+
+### Enroll course
+POST {{baseUrl}}api/bulk_enroll/v1/bulk_enroll
+Content-Type: application/json
+
+{
+    "identifiers": "test_submission@gmail.com",
+    "courses":"course-v1:FUNiX+DMP101x.1.0.VN+1023.XS",
+    "auto_enroll": true,
+    "email_students": false,
+    "action": "enroll"
+}
+
+### submit project
+
+POST {{devUrl}}/api/v1/project/submission
+Content-Type: application/json
+
+{
+   "submission_url": "http://google.com.vn",
+   "email": "test_submission@gmail.com",
+   "project_name": "test tao cv digital",
+   "submission_note": "Please give me high score", 
+   "course_code": "NJ301x"
+}
+
+### submit project local
+
+POST {{baseUrl}}/api/v1/project/submission
+Content-Type: application/json
+
+{
+   "submission_url": "http://google.com.vn",
+   "email": "business_student_1@gmail.com",
+   "project_name": "Learning Project 01",
+   "submission_note": "Please give me high score", 
+   "course_code": "code-01"
+}
 
 ### Register Student
 
@@ -6,10 +48,22 @@ POST {{baseUrl}}/api/student/register
 Content-Type: application/json
 
 {
-    "name":"khoa song nguyen111",
-    "username":"kietafck12031111",
-    "email":"kietafck11203111@gmail.com",
+    "name":"khoa song nguyen1118",
+    "username":"kietafck1203111188",
+    "email":"kietafck1120311177@gmail.com",
     "student_code":"332342311"
+}
+
+### Register Staging
+
+POST {{stagingUrl}}/api/student/register
+Content-Type: application/json
+
+{
+    "name":"review-01",
+    "username":"review-01",
+    "email":"review-01@funix.edu.vn",
+    "student_code":"review01"
 }
 
 ### GET Student
@@ -35,3 +89,4 @@ GET {{baseUrl}}/api/hello
 
 ###
 GET {{baseUrl}}/api/v2/database
+
