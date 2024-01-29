@@ -28,6 +28,10 @@ let status403 = 403;
 let status500 = 500;
 
 // ================= API ENDPOINTS ====================
+// Fake the ""api/v2/funix_portal/user/update_password"" endpoint
+server.post("/api/v2/funix_portal/user/update_password", (req, res) => {
+    return res.status(200).json(req.body);
+});
 // Fake the "api/funix_portal/user/create_user" endpoint
 server.post('/api/funix_portal/user/create_user', (req, res) => {
     return res.status(200).json(req.body);

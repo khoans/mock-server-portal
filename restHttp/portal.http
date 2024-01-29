@@ -7,10 +7,10 @@ POST {{baseUrl}}/api/student/register
 Content-Type: application/json
 
 {
-    "name":"khoa song nguyen11",
-    "username":"kietafck12031118855",
-    "email":"kietafck120311221@gmail.com",
-    "student_code":"332342311"
+    "name":"khoa 12song nguyen111",
+    "username":"kiet12afc11k12031118855",
+    "email":"kietafck1212110311221@gmail.com",
+    "student_code":"31221342311"
 }
 ### Register Student Staging
 
